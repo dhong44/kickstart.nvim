@@ -366,15 +366,26 @@ require('lazy').setup({
 
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
+      local actions = require 'telescope.actions'
       require('telescope').setup {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
-        --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          mappings = {
+            i = {
+              ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
+              ['<C-S-Q>'] = actions.smart_add_to_qflist + actions.open_qflist,
+              ['<C-l>'] = actions.smart_send_to_loclist + actions.open_loclist,
+              ['<C-S-L>'] = actions.smart_add_to_loclist + actions.open_loclist,
+            },
+            n = {
+              ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
+              ['<C-S-Q>'] = actions.smart_add_to_qflist + actions.open_qflist,
+              ['<C-l>'] = actions.smart_send_to_loclist + actions.open_loclist,
+              ['<C-S-L>'] = actions.smart_add_to_loclist + actions.open_loclist,
+            },
+          },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {

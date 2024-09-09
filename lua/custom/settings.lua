@@ -9,6 +9,16 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to system clipbo
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"+d', { desc = 'Delete to system clipboard' })
 vim.keymap.set('c', '<M-BS>', '<C-w>', { desc = 'Delete last word in command-line' })
 
+vim.keymap.set({ 'n', 'v' }, '[q', vim.cmd.cprev, { desc = 'Jump to next [q]uickfix item' })
+vim.keymap.set({ 'n', 'v' }, ']q', vim.cmd.cnext, { desc = 'Jump to previous [q]uickfix item' })
+vim.keymap.set({ 'n', 'v' }, '[Q', vim.cmd.cfirst, { desc = 'Jump to first [Q]uickfix item' })
+vim.keymap.set({ 'n', 'v' }, ']Q', vim.cmd.clast, { desc = 'Jump to last [Q]uickfix item' })
+
+vim.keymap.set({ 'n', 'v' }, '[l', vim.cmd.lprev, { desc = 'Jump to next [l]ocation item' })
+vim.keymap.set({ 'n', 'v' }, ']l', vim.cmd.lnext, { desc = 'Jump to previous [l]ocation item' })
+vim.keymap.set({ 'n', 'v' }, '[L', vim.cmd.lfirst, { desc = 'Jump to first [L]ocation item' })
+vim.keymap.set({ 'n', 'v' }, ']L', vim.cmd.llast, { desc = 'Jump to last [L]ocation item' })
+
 -- My settings
 vim.g.have_nerd_font = true
 vim.opt.relativenumber = true

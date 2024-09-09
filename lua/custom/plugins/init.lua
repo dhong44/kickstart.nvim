@@ -9,4 +9,5 @@ return {
       require('mini.misc').setup_auto_root()
     end,
   },
+  'nanotee/zoxide.vim',
 }

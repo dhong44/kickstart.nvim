@@ -19,7 +19,10 @@ vim.keymap.set({ 'n', 'v' }, ']l', vim.cmd.lnext, { desc = 'Jump to previous [l]
 vim.keymap.set({ 'n', 'v' }, '[L', vim.cmd.lfirst, { desc = 'Jump to first [L]ocation item' })
 vim.keymap.set({ 'n', 'v' }, ']L', vim.cmd.llast, { desc = 'Jump to last [L]ocation item' })
 
--- My settings
+vim.o.foldmethod = 'expr'
+vim.o.foldenable = true
+vim.o.foldexpr = vim.treesitter.foldexpr()
+
 vim.g.have_nerd_font = true
 vim.opt.relativenumber = true
 
